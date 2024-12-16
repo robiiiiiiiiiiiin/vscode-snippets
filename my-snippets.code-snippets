@@ -18,10 +18,17 @@
 
 
     // JAVASCRIPT
-    "log": {
-        "prefix": ["cl", "console", "log"],
+    "log_variable": {
+        "prefix": ["cl"],
          "body": [
-             "console.log('$1', $1);",
+             "console.log({$1});",
+         ],
+         "description": "Log output to console"
+    },
+    "log_text": {
+        "prefix": ["cll"],
+         "body": [
+             "console.log(\"$1\");",
          ],
          "description": "Log output to console"
     },
@@ -54,6 +61,20 @@
 
          ],
          "description": ""
+    },
+    "gtp": {
+        "prefix": "gtp",
+        "body": [
+            "get_template_part('template-parts/$1');"
+        ],
+        "description": "get_template_part"
+    },
+    "<??": {
+        "prefix": "<??",
+        "body": [
+            "<? /* $1 */ ?>"
+        ],
+        "description": "comment"
     },
 
     // REACT
